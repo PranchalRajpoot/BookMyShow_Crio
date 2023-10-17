@@ -9,12 +9,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Linkdlin {
+public class ImageUrl {
 
 
     ChromeDriver driver;
 
-    public Linkdlin() {
+    public ImageUrl() {
         System.out.println("Constructor: TestCases");
         WebDriverManager.chromedriver().timeout(30).setup();
         driver = new ChromeDriver();
