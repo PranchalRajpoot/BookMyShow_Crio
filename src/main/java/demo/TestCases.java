@@ -57,4 +57,7 @@ public class TestCases {
 
     }
 
+    public void testCase02() {
+    }
+
 }
