@@ -36,28 +36,21 @@ public class TestCases {
 
     }
 
-    public void testCase01() throws InterruptedException {
-        // System.out.println("Start Test case: testCase01");
-        // driver.navigate().to("https://www.google.com");
-        // driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
-        // driver.findElement(By.xpath("//textarea[@id='APjFqb']")).sendKeys("amazon");
-        // Actions action = new Actions(driver);
-        // action.sendKeys(Keys.ENTER).perform();
-        // boolean result =
-        // driver.findElement(By.xpath("//h3[normalize-space()='Amazon.in']")).isDisplayed();
-        // System.out.println("Result is displayed or not ? " + result);
-        // System.out.println("end Test case: testCase01");
+    
 
+    public void testCase01() throws InterruptedException {
         System.out.println("Start Test case: testCase01");
-        driver.navigate().to("https://in.bookmyshow.com/explore/home/chennai");
-        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-        List<WebElement> allLinks = driver.findElements(By.xpath("//a[@href]"));
-        System.out.println("Total Number of Links " + allLinks.size());
+        driver.navigate().to("https://www.google.com");
+        driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+        driver.findElement(By.xpath("//textarea[@id='APjFqb']")).sendKeys("amazon");
+        Actions action = new Actions(driver);
+        action.sendKeys(Keys.ENTER).perform();
+        boolean result =
+        driver.findElement(By.xpath("//h3[normalize-space()='Amazon.in']")).isDisplayed();
+        System.out.println("Result is displayed or not ? " + result);
         System.out.println("end Test case: testCase01");
 
-    }
 
-    public void testCase02() {
     }
 
 }
