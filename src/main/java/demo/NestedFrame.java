@@ -27,8 +27,34 @@ public void endTest()
     }
 
     
-    public  void testCase01(){
-       
+    public  void testCase01()
+    {
+        System.out.println("Start Test case: testCase01");
+        driver.get("https://the-internet.herokuapp.com/nested_frames");
+        driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+        
+        driver.switchTo().frame("frame-top"); //switched to frame top
+        driver.switchTo().frame("frame-left");
+        String frameLeft = driver.findElement(By.xpath("//*[contains(text(), 'LEFT')]")).getText();
+        
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame("frame-top"); //switched to frame top
+        driver.switchTo().frame("frame-middle");
+        String frameMiddle = driver.findElement(By.xpath("//*[contains(text(), 'MIDDLE')]")).getText();
+
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame("frame-top"); //switched to frame top
+        driver.switchTo().frame("frame-right");
+        String frameRight = driver.findElement(By.xpath("//*[contains(text(), 'RIGHT')]")).getText();
+
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame("frame-bottom"); //switched to frame bottom
+        String frameBottom = driver.findElement(By.xpath("//*[contains(text(), 'BOTTOM')]")).getText();
+
+        driver.switchTo().defaultContent();
+
+        System.out.println("Frame-Left text = " + frameLeft + " Frame-Middle text = " + frameMiddle + " Frame-Right text = " + frameRight + " Frame-BOTTOM text = " + frameBottom);
+        System.out.println("end Test case: testCase02");
 
     }
     

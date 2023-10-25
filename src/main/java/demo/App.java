@@ -12,9 +12,9 @@ public class App {
         // tests.endTest(); // End your test by clearning connections and closing
         //browser
 
-        LinkedinPost linkedinPost = new LinkedinPost();
-        linkedinPost.testCase01();
-        linkedinPost.endTest();
+        // LinkedinPost linkedinPost = new LinkedinPost();
+        // linkedinPost.testCase01();
+        // linkedinPost.endTest();
 
         // ImageUrl imageurl= new ImageUrl();
         // imageurl.testCase01();
@@ -32,9 +32,9 @@ public class App {
         // bookMyShow.testCase01();
         // bookMyShow.endTest();
 
-        // NestedFrame nestedFrame= new NestedFrame();
-        // nestedFrame.testCase01();
-        // nestedFrame.endTest();
+        NestedFrame nestedFrame= new NestedFrame();
+        nestedFrame.testCase01();
+        nestedFrame.endTest();
 
     }
 

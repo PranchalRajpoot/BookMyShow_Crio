@@ -36,8 +36,6 @@ public class TestCases {
 
     }
 
-    
-
     public void testCase01() throws InterruptedException {
         System.out.println("Start Test case: testCase01");
         driver.navigate().to("https://www.google.com");

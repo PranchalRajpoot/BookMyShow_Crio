@@ -32,34 +32,7 @@ public void endTest()
     
     public  void testCase01()
     {
-        driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_open");
-        String newURL=driver.getCurrentUrl();
-        System.out.println("Current URl " +  newURL );
-
-        //Count number of windows
-        int tottalWindows=driver.getWindowHandles().size();
-        System.out.println("Total Windows :"+tottalWindows);
-        driver.switchTo().frame("iframeResult");
-        driver.findElement(By.xpath("//button[text()='Try it']")).click();
-        int totalWindows=driver.getWindowHandles().size();
-        System.out.println("Total Windows after click event :"+totalWindows);
-        driver.switchTo().parentFrame();
-        driver.switchTo().defaultContent();
-        //driver.switchTo().window(null)
-       // driver.switchTo().window(WindowType. WINDOW);
-       //driver.switchTo().newWindow(WindowType. WINDOW);
-       //driver.switchTo().
-       Set<String> allwins= driver.getWindowHandles();
-       java.util.Iterator<String> it= allwins.iterator();
-       String parentURL=it.next();
-       String childurl=it.next();
-       System.out.println("Parent Windoe"+parentURL );
-       System.out.println("child Windoe"+childurl );
-        driver.switchTo().window(childurl);   
-           newURL=driver.getCurrentUrl();
-        System.out.println("Current URl after new window launch  :  " +  newURL );
-       
-
+        
     }
     
 }
