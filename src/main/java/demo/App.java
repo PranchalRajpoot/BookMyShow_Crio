@@ -20,21 +20,21 @@ public class App {
         // imageurl.testCase01();
         // imageurl.endTest();
 
-        // ImdbRating imdbRating= new ImdbRating();
-        // imdbRating.testCase01();
-        // imdbRating.endTest();
+        ImdbRating imdbRating= new ImdbRating();
+        imdbRating.testCase01();
+        imdbRating.endTest();
 
-        // WindowHandle windowHandle= new WindowHandle();
-        // windowHandle.testCase01();
-        // windowHandle.endTest();
+        WindowHandle windowHandle= new WindowHandle();
+        windowHandle.testCase01();
+        windowHandle.endTest();
 
         // BookMyShow bookMyShow= new BookMyShow();
         // bookMyShow.testCase01();
         // bookMyShow.endTest();
 
-        NestedFrame nestedFrame= new NestedFrame();
-        nestedFrame.testCase01();
-        nestedFrame.endTest();
+        // NestedFrame nestedFrame= new NestedFrame();
+        // nestedFrame.testCase01();
+        // nestedFrame.endTest();
 
     }
 

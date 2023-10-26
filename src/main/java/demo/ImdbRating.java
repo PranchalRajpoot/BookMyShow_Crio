@@ -29,39 +29,41 @@ public class ImdbRating {
 
     }
 
-    public void testCase01() throws InterruptedException {
-        System.out.println("Start Test case: testCase01");
-        driver.get("https://www.imdb.com/chart/top");
-        driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
-        WebElement sortBy = driver.findElement(By.xpath("//*[@id=\"lister-sort-by-options\"]"));
-        Select dropdown = new Select(sortBy);
+    public void testCase01() {
+        System.out.println("Start Test case: testCase05");
 
-        dropdown.selectByVisibleText("Ranking");
-        String highestRatedMovie = driver
-                .findElement(By.xpath("//*[@id=\"main\"]/div/span/div[1]/div/div[3]/table/tbody/tr[1]/td[2]"))
-                .getText();
+        // 1.Launch Chrome Browser
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
 
-        dropdown.selectByVisibleText("Release Date");
-        String oldestMovie = driver
-                .findElement(By.xpath("//*[@id=\"main\"]/div/span/div[1]/div/div[3]/table/tbody/tr[250]/td[2]"))
-                .getText();
-        String newestMovie = driver
-                .findElement(By.xpath("//*[@id=\"main\"]/div/span/div[1]/div/div[3]/table/tbody/tr[1]/td[2]"))
-                .getText();
+        // 2. Enter the URL
+        driver.get("https://www.imdb.com/chart/top/");
 
-        dropdown.selectByVisibleText("Number of Ratings");
-        String userRating = driver
-                .findElement(By.xpath("//*[@id=\"main\"]/div/span/div[1]/div/div[3]/table/tbody/tr[1]/td[2]"))
-                .getText();
+        driver.findElement(By.xpath("//button[@id='swap-sort-order-button']")).click();
+        String oldestMovie=driver.findElement(By.xpath("//div[@class='ipc-metadata-list-summary-item__c']//h3")).getText();
+        System.out.println("2. Old Rated Movie  "+ oldestMovie);
 
-        int totalMovies = driver
-                .findElements(By.xpath("//*[@id=\"main\"]/div/span/div[1]/div/div[3]/table/tbody/tr/td[2]")).size();
+        //
+        Select select=new Select(driver.findElement(By.xpath("//select[@id='sort-by-selector']")));
+        select.selectByVisibleText("IMDb rating");
+        String highestReatedMovie=driver.findElement(By.xpath("//div[@class='ipc-metadata-list-summary-item__c']//h3")).getText();
+        System.out.println("1. Hiigh Rated Movie  "+ highestReatedMovie);
 
-        System.out.println(
-                "Highest Rated Movie = " + highestRatedMovie + " Oldest Movie = " + oldestMovie + " Newest Movie = "
-                        + newestMovie + " Most User Rating = " + userRating + " Total mvies = " + totalMovies);
-        System.out.println("end Test case: testCase01");
+        select.selectByVisibleText("Release date");
+        String recentRattedMovie=driver.findElement(By.xpath("//div[@class='ipc-metadata-list-summary-item__c']//h3")).getText();
+        
+        System.out.println(" 4. Most recent Movie  "+ recentRattedMovie);
+
+         driver.findElement(By.xpath("//button[@id='swap-sort-order-button']")).click();
+        System.out.println(" 3. oldest movie   "+ recentRattedMovie);
+
+
+        select.selectByVisibleText("Number of ratings");
+        String highestRattedMovie=driver.findElement(By.xpath("//div[@class='ipc-metadata-list-summary-item__c']//h3")).getText();
+        System.out.println(" 5. Hiigh Rated Movie  "+ highestRattedMovie);
+
+         System.out.println("end Test case: testCase01");
+    }
 
     }
 
-}
